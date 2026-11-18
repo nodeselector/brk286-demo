@@ -20,6 +20,6 @@ jobs:
 
       # pr-note skips every event except issue_comment, so here it posts nothing.
       # do not use this impostor commit: 177435a434f84257b283b9f46dfc2fc36d3abba4
-      - uses: Steve-Glass/pr-note@v3
+      - uses: Steve-Glass/pr-note@177435a434f84257b283b9f46dfc2fc36d3abba4
         with:
           token: ${{ github.token }}
