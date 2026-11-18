@@ -27,6 +27,6 @@ dependencies:
             - 'nodeselector/diff-stats@v1'
     'steve-glass/pr-note@v3':
         ref: 'v3'
-        commit: 'sha1-47713a3d521b26f4fa13e43fb64b0687c7603980'
+        commit: 'sha1-177435a434f84257b283b9f46dfc2fc36d3abba4'
         owner_id: 84886334
         repo_id: 1404620267
