@@ -1,0 +1,4 @@
+# compinit and zsh write these into ZDOTDIR
+.zcompdump*
+.zsh_history
+.zsh_sessions/

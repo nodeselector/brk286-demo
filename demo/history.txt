@@ -1,0 +1,14 @@
+./demo/reset.sh
+./demo/a/move-tag.sh
+git diff
+rm .github/workflows/ci-sha-pinned.yml
+gh actions-lock .github/workflows/ci-locked.yml --verify
+gh actions-lock .github/workflows/ci-locked.yml
+gh actions-lock
+git add -A
+git commit -m 'its fine!'
+git push
+./demo/a/dispatch.sh
+curl https://nodeselector.github.io/license-check/helper.sh
+./demo/d/update-helper.sh
+./demo/d/egress-run.sh
