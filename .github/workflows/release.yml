@@ -1,0 +1,23 @@
+name: Release
+
+# Demo D: the pre-release license check, the same locked license-check v1 job on
+# a firewall runner and a plain runner. license-check runs a policy helper
+# fetched at runtime from GitHub Pages (nodeselector.github.io is allowlisted).
+# The lockfile pins the action's code, not that helper. There's no checkout, so
+# the check itself has nothing to scan and passes.
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  license-check:
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [ubuntu-24.04-firewall, ubuntu-24.04]
+    steps:
+      - name: Check licenses before release
+        uses: nodeselector/license-check@v1

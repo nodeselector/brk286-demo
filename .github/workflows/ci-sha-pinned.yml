@@ -1,0 +1,25 @@
+name: CI (SHA-pinned)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+
+      - uses: nodeselector/pr-size-labeler@ae47c61b2ecc8267950c5ac8cf6a55ad7afd23c2 # v1
+
+      # pr-note skips every event except issue_comment, so here it posts nothing.
+      # do not use this impostor commit: 177435a434f84257b283b9f46dfc2fc36d3abba4
+      - uses: Steve-Glass/pr-note@47713a3d521b26f4fa13e43fb64b0687c7603980 # v3
+        with:
+          token: ${{ github.token }}
