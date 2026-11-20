@@ -7,6 +7,8 @@ workflows:
         - 'actions/checkout@v6'
         - 'nodeselector/pr-size-labeler@v1'
         - 'steve-glass/pr-note@v3'
+    '.github/workflows/release.yml':
+        - 'nodeselector/license-check@v1'
 dependencies:
     'actions/checkout@v6':
         ref: 'v6'
@@ -18,6 +20,11 @@ dependencies:
         commit: 'sha1-e665493068ae1b587936681ea6caf6eb00bf7456'
         owner_id: 29457092
         repo_id: 1458138537
+    'nodeselector/license-check@v1':
+        ref: 'v1'
+        commit: 'sha1-196d817144d78bb6b0c140815849f73dbb6c457c'
+        owner_id: 29457092
+        repo_id: 1459429121
     'nodeselector/pr-size-labeler@v1':
         ref: 'v1'
         commit: 'sha1-ae47c61b2ecc8267950c5ac8cf6a55ad7afd23c2'
@@ -27,6 +34,6 @@ dependencies:
             - 'nodeselector/diff-stats@v1'
     'steve-glass/pr-note@v3':
         ref: 'v3'
-        commit: 'sha1-47713a3d521b26f4fa13e43fb64b0687c7603980'
+        commit: 'sha1-177435a434f84257b283b9f46dfc2fc36d3abba4'
         owner_id: 84886334
         repo_id: 1404620267
